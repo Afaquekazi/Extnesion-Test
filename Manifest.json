@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Solthron - Stop Overthinking AI Conversations",
+  "version": "1.0",
+  "description": "Think less, do more with AI. Automatically optimize your prompts for better conversations with any AI tool.",
+  "icons": {                             
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://afaque.pythonanywhere.com/*",
+    "https://solthron.com/*",
+    "https://www.solthron.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png", 
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content/content.css"],
+      "js": ["content/content.js"]
+    },
+    {
+      "matches": ["https://solthron.com/*", "https://www.solthron.com/*"],
+      "js": ["login-bridge.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["content/*", "background.js"],
+    "matches": ["<all_urls>"]
+  }]
+}
