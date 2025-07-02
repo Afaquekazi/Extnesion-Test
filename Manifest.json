@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Solthron - Stop Overthinking AI Conversations",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Think less, do more with AI. Automatically optimize your prompts for better conversations with any AI tool.",
   "icons": {                             
     "16": "icons/icon16.png",
@@ -10,8 +10,7 @@
   },
   "permissions": [
     "activeTab",
-    "storage",
-    "identity"
+    "storage"
   ],
   "host_permissions": [
     "https://afaque.pythonanywhere.com/*",
